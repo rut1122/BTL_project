@@ -17,14 +17,12 @@ protected WebDriver driver;
         // 1. הגדרת הדרייבר
         WebDriverManager.chromedriver().setup();
 
-        // 2. הגדרת אפשרויות להאצת הטעינה (EAGER - לא מחכה לכל התמונות והסקריפטים)
         ChromeOptions options = new ChromeOptions();
         options.setPageLoadStrategy(PageLoadStrategy.EAGER);
 
-        // 3. יצירת הדרייבר פעם אחת בלבד עם האופציות
         driver = new ChromeDriver(options);
 
-        // 4. הגדרות חלון וגלישה לאתר
+        //  הגדרות חלון וגלישה לאתר
         driver.manage().window().maximize();
         driver.get("https://www.btl.gov.il/Pages/default.aspx");
     }

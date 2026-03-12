@@ -12,13 +12,13 @@ public class SearchTest extends BaseTest{
 
 
 @Test
-    public void checkSearch() throws InterruptedException {
-        HomePage homePage=new HomePage(driver);
-        homePage.search("חישוב סכום דמי לידה ליום");
-        Thread.sleep(5000);
-        WebElement title= driver.findElement(By.xpath("//div[@id=\"mainContent\"]/div/h1"));
-        String s= title.getText();
-    Assertions.assertTrue(s.contains("חישוב סכום דמי לידה ליום"),
-            "הכותרת בדף תוצאות החיפוש אינה תואמת לחיפוש");    }
+    public void checkSearch(){
+
+       String searchTerm="חישוב סכום דמי לידה ליום";
+       HomePage homePage=new HomePage(driver);
+        homePage.search(searchTerm);
+        String title= homePage.getResultTitle();
+        Assertions.assertTrue(title.contains(searchTerm),
+            "הכותרת בדף תוצאות החיפוש אינה תואמת לחיפוש"+title);    }
 
 }

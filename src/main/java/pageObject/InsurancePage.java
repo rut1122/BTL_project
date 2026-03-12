@@ -14,7 +14,7 @@ public class InsurancePage extends BasePage {
     WebElement calculator;
 
     public void clickCalculator(WebDriver driver) {
-        calculator.click();
 
+        ((org.openqa.selenium.JavascriptExecutor) driver).executeScript("arguments[0].click();", calculator);
     }
 }
